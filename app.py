@@ -1,3 +1,4 @@
+#! coding: utf-8
 from flask import Flask, url_for
 from flask_migrate import Migrate
 from flask_security import Security
@@ -24,7 +25,7 @@ migrate = Migrate(app, db)
 admin_migrate = Migrate(app, admin_db)
 
 security = Security(app, admins_store)
-admin = AdminLte(app, skin = 'green', name = 'FlaskCMS', short_name = "<b>F</b>C", long_name = "<b>Flask</b>CMS")
+admin = AdminLte(app, skin = 'blue', name = 'ThePlatform', short_name = "<b>T</b>P", long_name = "<b>The</b>Platform")
 
 admin.add_view(MessageView(Message, db.session, name = "Messages", menu_icon_value = 'fa-envelope'))
 admin.add_view(DeviceView(Device, db.session, name = "Devices", menu_icon_value = 'fa-laptop'))
