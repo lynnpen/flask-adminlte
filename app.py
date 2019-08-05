@@ -3,11 +3,11 @@ from flask import Flask, url_for
 from flask_migrate import Migrate
 from flask_security import Security
 from flask_security.utils import encrypt_password
+import flask_mail
 from flask_admin import helpers as admin_helpers
 from adminlte.admin import AdminLte, admins_store, admin_db
 from adminlte.models import Role
 from adminlte.views import FaLink
-
 from flask_admin import menu
 
 from models import db
@@ -23,6 +23,7 @@ db.init_app(app)
 db.app = app
 migrate = Migrate(app, db)
 admin_migrate = Migrate(app, admin_db)
+mail = flask_mail.Mail(app)
 
 security = Security(app, admins_store)
 admin = AdminLte(app, skin = 'blue', name = 'ThePlatform', short_name = "<b>T</b>P", long_name = "<b>The</b>Platform")

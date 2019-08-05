@@ -1,3 +1,4 @@
+#! coding: utf-8
 # Enable debug mode
 DEVELOPMENT = True
 DEBUG = True
@@ -28,7 +29,20 @@ SECURITY_POST_REGISTER_VIEW = "/admin/"
 SECURITY_POST_RESET_VIEW = "/admin/"
 
 # Flask-Security features
-SECURITY_REGISTERABLE = True
+SECURITY_REGISTERABLE = False
 SECURITY_RECOVERABLE = True
 SECURITY_CHANGEABLE = True
 SECURITY_SEND_REGISTER_EMAIL = False
+SECURITY_EMAIL_SENDER = 'noreply@qfpay.com'
+
+# email config
+MAIL_SERVER = 'smtp.exmail.qq.com'
+MAIL_PORT = 25
+MAIL_USE_TLS = False
+MAIL_USE_SSL = False
+MAIL_USERNAME = 'noreply@qfpay.com'
+MAIL_PASSWORD = 'QFpay12345'
+MAIL_DEFAULT_SENDER = MAIL_USERNAME
+SECURITY_EMAIL_SUBJECT_PASSWORD_RESET = u'用户密码重置'
+
+
